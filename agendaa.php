@@ -25,4 +25,4 @@ $events = $calendarService->events->listEvents('primary', array(
 // Parcourir les événements et les afficher
 foreach ($events->getItems() as $event) {
     echo $event->getSummary() . '<br>';
-}
+}//test
