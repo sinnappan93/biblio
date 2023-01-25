@@ -1,2 +1,0 @@
-<iframe src="https://calendar.google.com/calendar/embed?src=biblagend%40gmail.com&ctz=Europe%2FParis" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MWQ1MGp1ZDZ1Z2pkbDRoM3Y5ZTg4YWlmbmcgYmlibGFnZW5kQG0&amp;tmsrc=biblagend%40gmail.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_fr.gif"></a>
