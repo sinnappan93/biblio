@@ -12,7 +12,7 @@
               </div>
               <input name="login" id="login" class="btn btn-block login-btn" type="button" value="Login">
             </form>
-            <a href="#!" class="forgot-password-link">mot de passe oublié?</a>
+            <a href="#!" class="forgot-password-link">Forgot password</a>
           </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
