@@ -1,13 +1,14 @@
 body {
   font-family: "Karla", sans-serif;
-  background-color: #fff;
+  background-color: #f5db95;
   min-height: 100vh; }
 
 .brand-wrapper {
+  padding-left: 15px;
   padding-top: 7px;
   padding-bottom: 8px; }
   .brand-wrapper .logo {
-    height: 25px; }
+    height: 85px; }
 
 .login-section-wrapper {
   display: -webkit-box;
@@ -96,5 +97,7 @@ body {
      object-fit: cover;
   -o-object-position: left;
      object-position: left; }
+
+     
 
 /*# sourceMappingURL=login.css.map */

@@ -9,10 +9,13 @@ else {
 ob_start(); // Mise en mémoire tampon 
 
 if ($page === 'home'){ 
-    require 'home.php';
+    require 'pages/home.php';
 }
-elseif ($page === 'public'){
-    require 'pages/public/agendaa.php';
+elseif ($page === 'verification'){
+    require 'pages/verification.php';
+}
+elseif ($page === 'home1'){
+    require 'pages/home1.php';
 }
 
 
