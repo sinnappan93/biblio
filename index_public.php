@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+
 if (isset($_SESSION["profil"])) {
 
 if (isset($_GET['page'])) { // Récupération de la page courante via requete 

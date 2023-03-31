@@ -6,7 +6,7 @@
     background-size: auto 100%;
     }
     
-    @media (min-width: 1025px) {
+    @media (min-width: 770px) {
     .h-custom-2 {
     height: 100%;
     }
@@ -22,12 +22,19 @@
     margin-right: 40%;
 }
 
-.login-wrapper{
-    margin-left:15%;
-    margin-right: 15%;
-}
-
+@media (max-width: 576px) {
+    .login-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  }
 .align-1{
     margin-left:20%;
     margin-right:20%;
+}
+
+
+.boutons{
+    margin-top:15%;
 }

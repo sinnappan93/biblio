@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="texte-redirection">
         <h1>Vous n'avez pas été reconnu(e), redirection en cours ...</h1>
-        <script>setTimeout(function(){window.location.href='index'},3000);</script>
+        <script>setTimeout(function(){window.location.href='index.php'},3000);</script>
         </div>
     <?php }?>
 

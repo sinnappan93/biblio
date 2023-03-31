@@ -10,18 +10,10 @@
           </div>
 
 
-          <div class="login-wrapper my-auto dropdown-css d-grip">
-          <div class="btn-group dropright">
-                <button class="btn btn-secondary btn-lg dropdown-toggle btn-warning " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Selectionner votre profil utilisateur
-                </button>
-                <div class="dropdown-menu dropdown-css">
-                <a class="dropdown-item" href="?page=home1&id=1">Administrateur</a>
-                <a class="dropdown-item" href="?page=home1&id=2">Utilisateur public</a>
-                </div>
-                </div>
-          </div>
-
+            <div class="boutons">
+            <a style="margin-top:25%;" href="?page=home1&id=1" class="btn btn-primary btn-lg btn-block btn-warning btn-block login-btn" role="button" aria-pressed="true">Administrateur</a>
+            <a href="?page=home1&id=2" class="btn btn-primary btn-lg btn-block btn-warning btn-block login-btn" role="button" aria-pressed="true">Utilisateur public</a>
+            </div>
 
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
@@ -32,4 +24,3 @@
   </main>
 
 
-<?php
