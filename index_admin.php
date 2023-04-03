@@ -20,6 +20,9 @@ if ($page === 'home'){
 elseif ($page === 'logout'){
     require 'pages/admin/logout.php';
 }
+elseif ($page === 'test'){
+    require 'pages/admin/calendar.php';
+}
 }
 else{
     header('Location: index.php');
@@ -30,5 +33,5 @@ else{
 }
 
 $content = ob_get_clean(); // Lire le contenu du tampon et l'effacer
-    require 'template/template.php'; // inserer la page dans un template
+    require 'template/template_admin.php'; // inserer la page dans un template
 ?>
