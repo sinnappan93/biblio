@@ -3,6 +3,7 @@ let evenements = [{
     "start": "2023-03-27 09:20:00",
     "end": "2023-03-27 10:20:00",
     "backgroundColor": "#FF0000"
+    
 },{
     "title": "CE1 B Martine Journeau \n Sylvie Palmer",
     "start": "2023-03-27 10:30:00",
@@ -47,7 +48,7 @@ let evenements = [{
     "title": "CM2 ABC Pascale Benabdessalem",
     "start": "2023-03-30 12:00:00",
     "end": "2023-03-30 13:20:00",
-    "backgroundColor": "#6600FF"
+    "backgroundColor": "#6600FF"  
  },{
     "title": "CM1 C Pascale Benabdessalem \n Thierry Gamain",
     "start": "2023-03-30 13:30:00",
@@ -88,8 +89,12 @@ let evenements = [{
 
 
 
-]
- 
+]  
+// document.getElementById("monObjetCliquable").addEventListener("click", function() {
+//    window.location.href = "https://localhost/www/fullcalendar-master/forms.html";
+// });
+
+
 window.onload = () => {
     
     let elementCalendrier = document.getElementById("calendrier")
@@ -99,18 +104,23 @@ window.onload = () => {
                 // On instancie le calendrier
                 let calendrier = new FullCalendar.Calendar(elementCalendrier, {
                     
-                    
+                   
                     // On appelle les composants
-                    plugins: ['dayGrid','timeGrid','list','slotMinTime'],
+                    plugins: ['dayGrid','timeGrid','list','interaction'],
                     
                     defaultView: 'timeGridWeek',
-                    slotMinTime: "08:00:00",
-                   slotMaxTime: "18:00:00",
+                    nowIndicator: true,
+                    minTime: "08:00",
+                    maxTime: "18:00",
+                  //   events: booking,
+                  //   selectable: true,
+                  //   selectHelper: true,
+                  //   select: function(start, end, Alldays) {
+                  //    $('formulaire').modal('toggle');
+                  //   },
+                    
                     locale: 'fr',
                     hiddenDays: [ 3 ],
-                    
-                   
-                    // scrollTime: "08:00:00",
                     weekends: false,
                     header: {
                         left: 'prev,next today',
@@ -127,8 +137,9 @@ window.onload = () => {
                    
                    events: evenements,
                    
-                    
                    
+                    
+                  
                    
                 
 
@@ -138,7 +149,17 @@ window.onload = () => {
             })
             
             
-           calendrier.render()
+            calendrier.render()
+               // eventClick: function(info) {
+               //   alert('Event: ' + info.event.title);
+               //   alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+               //   alert('View: ' + info.view.type);
+             
+               //   // change the border color just for fun
+               //   info.el.style.borderColor = 'red';
+               // }
+               
+             
             
         }
      
