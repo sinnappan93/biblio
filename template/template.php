@@ -9,10 +9,6 @@
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/login.css">
-  <link rel="stylesheet" href="fullcalendar/core/main.css">
-  <link rel="stylesheet" href="fullcalendar/daygrid/main.css">
-  <link rel="stylesheet" href="fullcalendar/timegrid/main.css">
-  <link rel="stylesheet" href="fullcalendar/list/main.css">
   <link rel="stylesheet" href="css/admin/styles.css">
 </head>
 
@@ -24,12 +20,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="fullcalendar/core/main.js"></script>
-  <script src="fullcalendar/daygrid/main.js"></script>
-  <script src="fullcalendar/timegrid/main.js"></script>
-  <script src="fullcalendar/list/main.js"></script>
-  <script src="fullcalendar/interaction/main.js"></script>
-  <script src="javascript/scripts.js"></script>
+  <script src="javascript/script.js"></script>
 </body>
 </html>
 

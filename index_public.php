@@ -15,7 +15,13 @@ else {
 ob_start(); // Mise en mémoire tampon 
 
 if ($page === 'home'){ 
-    require 'pages/public/home.php';
+    require 'pages/public/index.php';
+}
+elseif ($page === 'save'){
+    require 'pages/public/save_schedule.php';
+}
+elseif ($page === 'delete'){
+    require 'pages/public/delete_schedule.php';
 }
 }else{
 header('Location: index.php');
