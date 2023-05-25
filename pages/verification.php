@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $pswd = $db->prepare("SELECT password, username FROM user WHERE id= '".$login."'"); // Requete SQL
     $pswd->setFetchMode(PDO::FETCH_OBJ); // Def méthode d'affichage 
-    $pswd->execute(array($mdp)); 
+    $pswd->execute(); 
     var_dump($pswd);
     $results=$pswd->fetchAll();
     foreach($results as $result);

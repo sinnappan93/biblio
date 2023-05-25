@@ -15,13 +15,13 @@ else {
 ob_start(); // Mise en mémoire tampon 
 
 if ($page === 'home'){ 
-    require 'pages/admin/home.php';
+    require 'pages/admin/index.php';
 }
-elseif ($page === 'logout'){
-    require 'pages/admin/logout.php';
+elseif ($page === 'save'){
+    require 'pages/admin/save_schedule.php';
 }
-elseif ($page === 'test'){
-    require 'pages/admin/calendar.php';
+elseif ($page === 'delete'){
+    require 'pages/admin/delete_schedule.php';
 }
 }
 else{
