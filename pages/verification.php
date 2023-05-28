@@ -31,17 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php
     if (isset($authOK)) {?>
-        <div class="gif">
-        <img src="assets/images/login_load.gif">
-        </div>
-        <div class="texte">
-            <h1>Authentification réussi veuillez patienter quelques instants </h1>
-        </div>
     <?php
     if($_SESSION['profil'] == "administrateur"){
-            ?><script>setTimeout(function(){window.location.href='index_admin.php'},3000);</script><?php
+            ?><script>setTimeout(function(){window.location.href='index_admin.php'},0);</script><?php
         }else{
-            ?><script>setTimeout(function(){window.location.href='index_public.php'},300000000);</script><?php
+            ?><script>setTimeout(function(){window.location.href='index_public.php'},0);</script><?php
         }
     ?>    
     <?php

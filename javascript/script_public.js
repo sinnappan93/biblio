@@ -94,7 +94,7 @@
                 $('#event-details-modal').modal('hide');
                 form.find('[name="title"]').focus();
             } else {
-                alert("Event is undefined");
+                alert("L'événement n'existe pas !");
             }
         });
 
@@ -103,12 +103,12 @@
             var id = $(this).attr('data-id');
 
             if (!!scheds[id]) {
-                var _conf = confirm("Are you sure to delete this scheduled event?");
+                var _conf = confirm("Voulez-vous vraiment supprimer cet évenement ?");
                 if (_conf === true) {
                     location.href = "?page=delete&id=" + id;
                 }
             } else {
-                alert("Event is undefined");
+                alert("Cet évenement n'existe pas");
             }
         });
     });

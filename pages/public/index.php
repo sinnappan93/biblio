@@ -83,8 +83,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="text-center">
-                            <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save</button>
-                            <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Cancel</button>
+                            <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Sauvegarder</button>
+                            <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Annuler</button>
                         </div>
                     </div>
                 </div>
@@ -106,18 +106,18 @@
                             <dd id="title" class="fw-bold fs-4"></dd>
                             <dt class="text-muted">Description</dt>
                             <dd id="description" class=""></dd>
-                            <dt class="text-muted">Start</dt>
+                            <dt class="text-muted">Horaire début</dt>
                             <dd id="start" class=""></dd>
-                            <dt class="text-muted">End</dt>
+                            <dt class="text-muted">Horaire fin</dt>
                             <dd id="end" class=""></dd>
                         </dl>
                     </div>
                 </div>
                 <div class="modal-footer rounded-0">
                     <div class="text-end">
-                        <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">Delete</button>
-                        <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="">Modifier</button>
+                        <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">Supprimer</button>
+                        <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Fermer</button>
                     </div>
                 </div>
             </div>
