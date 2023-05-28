@@ -23,6 +23,9 @@ elseif ($page === 'save'){
 elseif ($page === 'delete'){
     require 'pages/public/delete_schedule.php';
 }
+elseif ($page === 'logout'){ 
+    require 'pages/public/logout.php';
+} 
 }else{
 header('Location: index.php');
     $_SESSION = array();

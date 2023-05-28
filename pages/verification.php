@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pswd = $db->prepare("SELECT password, username FROM user WHERE id= '".$login."'"); // Requete SQL
     $pswd->setFetchMode(PDO::FETCH_OBJ); // Def méthode d'affichage 
     $pswd->execute(); 
-    var_dump($pswd);
     $results=$pswd->fetchAll();
     foreach($results as $result);
     $mdp_saisi =  $result->password;
@@ -42,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($_SESSION['profil'] == "administrateur"){
             ?><script>setTimeout(function(){window.location.href='index_admin.php'},3000);</script><?php
         }else{
-            ?><script>setTimeout(function(){window.location.href='index_public.php'},3000);</script><?php
+            ?><script>setTimeout(function(){window.location.href='index_public.php'},300000000);</script><?php
         }
     ?>    
     <?php
@@ -55,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="texte-redirection">
         <h1>Vous n'avez pas été reconnu(e), redirection en cours ...</h1>
-        <script>setTimeout(function(){window.location.href='index.php'},3000000);</script>
+        <script>setTimeout(function(){window.location.href='index.php'},3000);</script>
         </div>
     <?php }?>
 

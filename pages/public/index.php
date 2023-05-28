@@ -37,7 +37,6 @@
         $sched_res = [];
 
         foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){
-            var_dump($row['color']);
             $row['sdate'] = date("F d, Y h:i A",strtotime($row['start_datetime']));
             $row['edate'] = date("F d, Y h:i A",strtotime($row['end_datetime']));
             $sched_res[$row['id']] = $row;
@@ -48,15 +47,7 @@
         if(isset($conn)) $conn->close();
     ?>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient" id="topNavBar">
-        <div class="container d-flex justify-content-center">
-            <div class="row">
-                <div class="col-md-12">
-                    <a class="navbar-brand title" href="#">Projet biblio</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+ 
     <div class="container py-5" id="page-container">
         <div class="row">
             <div class="col-md-9">
@@ -72,16 +63,12 @@
                             <form action="?page=save" method="post" id="schedule-form">
                                 <input type="hidden" name="id" value="">
                                 <div class="form-group mb-2">
-                                    <label for="title" class="control-label">Titre</label>
+                                    <label for="title" class="control-label">Participant</label>
                                     <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
                                 </div>
                                 <div class="form-group mb-2">
                                     <label for="description" class="control-label">Description</label>
                                     <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <label for="color" class="control-label">Couleur</label>
-                                    <input type="text" class="form-control form-control-sm rounded-0" name="color" id="color" required>
                                 </div>
                                 <div class="form-group mb-2">
                                     <label for="start_datetime" class="control-label">Début</label>
@@ -115,7 +102,7 @@
                 <div class="modal-body rounded-0">
                     <div class="container-fluid">
                         <dl>
-                            <dt class="text-muted">Titre</dt>
+                            <dt class="text-muted">Participant</dt>
                             <dd id="title" class="fw-bold fs-4"></dd>
                             <dt class="text-muted">Description</dt>
                             <dd id="description" class=""></dd>
