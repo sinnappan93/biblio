@@ -111,4 +111,48 @@
                 alert("Cet évenement n'existe pas");
             }
         });
+
+
+        $('#calendar').fullCalendar( 'addEventSource',        
+        function(start, end, callback) {
+            // When requested, dynamically generate a
+            // repeatable event for every monday.
+            var events = [];
+            var monday = 1;
+            var one_day = (24 * 60 * 60 * 1000);
+    
+            for (loop = start.getTime();
+                 loop <= end.getTime();
+                 loop = loop + one_day) {
+    
+                var column_date = new Date(loop);
+    
+                if (column_date.getDay() == monday) {
+                    // we're in Moday, create the event
+                    events.push({
+                        title: 'Morning Meeting',
+                        start: new Date(column_date.setHours(10, 00)),
+                        end: new Date(column_date.setHours(10, 40)),
+                        allDay: false
+                    });
+                }
+            } // for loop
+    
+            // return events generated
+            callback( events );
+        }
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
     });
