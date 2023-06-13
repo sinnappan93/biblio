@@ -47,50 +47,61 @@
         if(isset($conn)) $conn->close();
     ?>
 
- 
-    <div class="container py-5" id="page-container">
-        <div class="row">
-            <div class="col-md-9">
-                <div id="calendar"></div>
-            </div>
-            <div class="col-md-3">
-                <div class="cardt rounded-0 shadow">
-                    <div class="card-header bg-gradient bg-primary text-light">
-                        <h5 class="card-title">Evénements</h5>
+<div class="container py-5" id="page-container">
+    <div class="row">
+        <div class="col-md-9">
+            <div id="calendar"></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card rounded-0 shadow">
+                <div class="card-header bg-gradient bg-primary text-light">
+                    <h5 class="card-title">Événements</h5>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <form action="?page=save" method="post" id="schedule-form">
+                            <input type="hidden" name="id" value="">
+                            <div class="form-group mb-2">
+                                <label for="title" class="control-label">Participant</label>
+                                <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="description" class="control-label">Description</label>
+                                <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="start_datetime" class="control-label">Début</label>
+                                <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="end_datetime" class="control-label">Fin</label>
+                                <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="end_datetime_r" class="control-label">Fin répétition</label>
+                                <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime_r" id="end_datetime_r">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="checked" id="recursif" name="recursif">
+                                <label class="form-check-label" for="recursif">
+                                    Événement récursif
+                                </label>
+                            </div>
+                        </form>
                     </div>
-                    <div class="card-body">
-                        <div class="container-fluid">
-                            <form action="?page=save" method="post" id="schedule-form">
-                                <input type="hidden" name="id" value="">
-                                <div class="form-group mb-2">
-                                    <label for="title" class="control-label">Participant</label>
-                                    <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <label for="description" class="control-label">Description</label>
-                                    <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <label for="start_datetime" class="control-label">Début</label>
-                                    <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
-                                </div>
-                                <div class="form-group mb-2">
-                                    <label for="end_datetime" class="control-label">Fin</label>
-                                    <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="text-center">
-                            <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Sauvegarder</button>
-                            <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Annuler</button>
-                        </div>
+                </div>
+                <div class="card-footer">
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Sauvegarder</button>
+                        <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Annuler</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+ 
+
     <!-- Event Details Modal -->
     <div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="event-details-modal">
         <div class="modal-dialog modal-dialog-centered">

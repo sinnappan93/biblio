@@ -8,7 +8,7 @@
         if (!!scheds) {
             Object.keys(scheds).map(k => {
                 var row = scheds[k]
-                events.push({ id: row.id, title: row.title, start: row.start_datetime, end: row.end_datetime });
+                events.push({ id: row.id, title: row.title, start: row.start_datetime, end: row.end_datetime, end_r: row.end_datetime_r });
             });
         }
         
@@ -28,8 +28,9 @@
                 var start = info.start; // Récupère la date de début sélectionnée
                 var end = info.end;
 
-                $('#start_datetime').val(moment(start).format('YYYY-MM-DDThh:mm'));//erreur de recuperation
-                $('#end_datetime').val(moment(end).format('YYYY-MM-DDThh:mm'));//erreur de recuperation 
+                $('#start_datetime').val(moment(start).format('YYYY-MM-DDTHH:mm'));//erreur de recuperation
+                $('#end_datetime').val(moment(end).format('YYYY-MM-DDTHH:mm'));//erreur de recuperation 
+                $('#end_datetimer').val(moment(end_r).format('YYYY-MM-DDTHH:mm'));//erreur de recuperation 
             },
             slotMinTime: "08:00",
             slotMaxTime: "18:00", 
