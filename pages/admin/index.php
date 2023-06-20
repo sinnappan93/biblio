@@ -140,7 +140,14 @@
             </div>
         </div>
     </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js">
+    </script>
+
     
 
-</body>
-</html>
+    <script>
+        const pdf = new jsPDF();
+        pdf.text('Ma premiere ligne en jsPDF', 10, 10);
+        pdf.save('a4.pdf');
+    </script> -->
+    <!-- Création de PDF -->

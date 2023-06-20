@@ -1,27 +1,25 @@
 <?php
-session_start();
-require 'database/db.php';
+session_start(); // Démarrage de la session
+require 'database/db.php'; // Inclusion du fichier de connexion à la base de données
 
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérification si la méthode de requête HTTP utilisée est POST
     
-    $login = $_SESSION['identifiant'] ;
-    $mdp = $_POST['passwordconnect'];
+    $login = $_SESSION['identifiant']; // Récupération de l'identifiant de session
+    $mdp = $_POST['passwordconnect']; // Récupération du mot de passe saisi dans le formulaire
 
-    $pswd = $db->prepare("SELECT password, username FROM user WHERE id= '".$login."'"); // Requete SQL
-    $pswd->setFetchMode(PDO::FETCH_OBJ); // Def méthode d'affichage 
-    $pswd->execute(); 
-    $results=$pswd->fetchAll();
-    foreach($results as $result);
-    $mdp_saisi =  $result->password;
-    $profil = $result->username;
-    $hash = password_hash($mdp, PASSWORD_DEFAULT); // hash le mdp pour comparaison
+    $pswd = $db->prepare("SELECT password, username FROM user WHERE id= '".$login."'"); // Préparation de la requête SQL pour récupérer le mot de passe correspondant à l'identifiant
+    $pswd->setFetchMode(PDO::FETCH_OBJ); // Définition du mode d'affichage des résultats de la requête
+    $pswd->execute(); // Exécution de la requête
+    $results = $pswd->fetchAll(); // Récupération de tous les résultats de la requête
+    foreach($results as $result); // Parcours des résultats (un seul résultat attendu)
+    $mdp_saisi =  $result->password; // Récupération du mot de passe stocké dans la base de données
+    $profil = $result->username; // Récupération du nom d'utilisateur (profil) associé à l'identifiant
+    $hash = password_hash($mdp, PASSWORD_DEFAULT); // Hachage du mot de passe saisi pour comparaison
 
-    if (password_verify($mdp, $mdp_saisi)) { // comparaison sur les passwords 
-        if ($pswd->rowCount() == 1) {
-            $_SESSION['profil'] = $profil;
-            $authOK = true;
+    if (password_verify($mdp, $mdp_saisi)) { // Comparaison des mots de passe hachés
+        if ($pswd->rowCount() == 1) { // Vérification si la requête a renvoyé un seul résultat
+            $_SESSION['profil'] = $profil; // Stockage du profil dans la variable de session
+            $authOK = true; // Authentification réussie
         }
     } 
 }
@@ -30,12 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
 
     <?php
-    if (isset($authOK)) {?>
+    if (isset($authOK)) { // Vérification si l'authentification est réussie
+    ?>
     <?php
-    if($_SESSION['profil'] == "administrateur"){
-            ?><script>setTimeout(function(){window.location.href='index_admin.php'},0);</script><?php
+    if($_SESSION['profil'] == "administrateur"){ // Vérification du profil de l'utilisateur
+            ?><script>setTimeout(function(){window.location.href='index_admin.php'},0);</script><?php // Redirection vers la page d'accueil de l'administrateur
         }else{
-            ?><script>setTimeout(function(){window.location.href='index_public.php'},0);</script><?php
+            ?><script>setTimeout(function(){window.location.href='index_public.php'},0);</script><?php // Redirection vers la page d'accueil du public
         }
     ?>    
     <?php
@@ -43,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else { 
         ?>
         <div class="gif">
-        <img src="assets/images/log_error.gif" class ="img-loading-erro"r>
+        <img src="assets/images/log_error.gif" class="img-loading-erro">
         </div>
 
         <div class="texte-redirection">
@@ -51,13 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <script>setTimeout(function(){window.location.href='index.php'},3000);</script>
         </div>
     <?php }?>
-
 </div>
 
-
 <?php
-// mdp admi : testadmin
-// mdp public : testpublic
-
+// Mots de passe : admin - "testadmin", public - "testpublic"
 ?>
-

@@ -31,10 +31,16 @@
 <body class="bg-light">
 
     <?php
-        require_once('database/bd.php');
+
+        // Inclusion du fichier de base de données
+        require_once('database/bd.php');     
+
+    // Récupération des horaires depuis la base de données
 
         $schedules = $conn->query("SELECT * FROM `schedule_list`");
         $sched_res = [];
+
+            // Transformation des horaires dans un format lisible pour l'affichage
 
         foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){
             $row['sdate'] = date("F d, Y h:i A",strtotime($row['start_datetime']));
@@ -43,6 +49,7 @@
         }
 
        // $get_color = $conn->query("SELECT color FROM `schedule_list` WHERE id = $row['id']
+    // Fermeture de la connexion à la base de données
 
         if(isset($conn)) $conn->close();
     ?>
