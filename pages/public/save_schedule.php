@@ -66,13 +66,11 @@ if($_SERVER['REQUEST_METHOD'] !='POST'){
         
         extract($_POST);
         $allday = isset($allday);
-    
-      
-    
+
         if(empty($id)){
-            $sql = "INSERT INTO `schedule_list` (`title`,`description`,`start_datetime`,`end_datetime`, `end_datetime_r`) VALUES ('$title','$description','$start_datetime','$end_datetime', '$end_datetime_r')";
+            $sql = "INSERT INTO `schedule_list` (`title`,`description`, `participant2` ,`start_datetime`,`end_datetime`, `end_datetime_r`) VALUES ('$title','$description', '$participant2' ,'$start_datetime','$end_datetime', '$end_datetime_r')";
         }else{
-            $sql = "UPDATE `schedule_list` set `title` = '{$title}', `description` = '{$description}', `start_datetime` = '{$start_datetime}', `end_datetime` = '{$end_datetime}' where `id` = '{$id}'";
+            $sql = "UPDATE `schedule_list` set `title` = '{$title}', `description` = '{$description}',`participant2` = '{$participant2}', `start_datetime` = '{$start_datetime}', `end_datetime` = '{$end_datetime}' where `id` = '{$id}'";
         }
     
         $save = $conn->query($sql);
@@ -89,15 +87,10 @@ if($_SERVER['REQUEST_METHOD'] !='POST'){
         
         $conn->close();
 
+      }
 
-
-
+      if(empty($participant2)){
 
       }
 
-/*
-
-
-
-
-?>*/
+?>

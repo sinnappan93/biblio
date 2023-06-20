@@ -62,8 +62,12 @@
                         <form action="?page=save" method="post" id="schedule-form">
                             <input type="hidden" name="id" value="">
                             <div class="form-group mb-2">
-                                <label for="title" class="control-label">Participant</label>
+                                <label for="title" class="control-label">Participant 1</label>
                                 <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="title" class="control-label">Participant 2</label>
+                                <input type="text" class="form-control form-control-sm rounded-0" name="participant2" id="participant2">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="description" class="control-label">Description</label>
@@ -115,6 +119,8 @@
                         <dl>
                             <dt class="text-muted">Participant</dt>
                             <dd id="title" class="fw-bold fs-4"></dd>
+                            <dt class="text-muted">Participant 2</dt>
+                            <dd id="participant2" class="fw-bold fs-4"></dd>
                             <dt class="text-muted">Description</dt>
                             <dd id="description" class=""></dd>
                             <dt class="text-muted">Horaire début</dt>
