@@ -91,6 +91,10 @@
                                     <label for="end_datetime" class="control-label">Fin</label>
                                     <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
                                 </div>
+                                <div>
+                                   <input type="checkbox" id="scales" name="scales" checked>
+                                   <label for="scales">Reccurence</label>
+                                </div>
                             </form>
                         </div>
                     </div>
