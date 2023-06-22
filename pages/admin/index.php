@@ -91,6 +91,10 @@
                                     <label for="end_datetime" class="control-label">Fin</label>
                                     <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
                                 </div>
+                                <div>
+                                   <input type="checkbox" id="scales" name="scales" checked>
+                                   <label for="scales">Reccurence</label>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -136,7 +140,14 @@
             </div>
         </div>
     </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js">
+    </script>
+
     
 
-</body>
-</html>
+    <script>
+        const pdf = new jsPDF();
+        pdf.text('Ma premiere ligne en jsPDF', 10, 10);
+        pdf.save('a4.pdf');
+    </script> -->
+    <!-- Création de PDF -->

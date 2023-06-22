@@ -15,6 +15,7 @@ $(function() {
     var m = date.getMonth();
     var y = date.getFullYear();
 
+    // Initialisation du calendrier
     calendar = new Calendar(document.getElementById('calendar'), {
         initialView: 'timeGridWeek',
         nowIndicator: true,
@@ -26,7 +27,7 @@ $(function() {
             $('#end_datetime').val(moment(info.end).format('YYYY-MM-DDTHH:mm'));
         },
         slotMinTime: "08:00",
-        slotMaxTime: "18:00", 
+        slotMaxTime: "18:00",
         hiddenDays: [0, 3, 6],
         locale: 'fr',
         headerToolbar: {
@@ -34,7 +35,7 @@ $(function() {
             right: 'dayGridMonth,list,timeGridWeek',
             center: 'title'
         },
-        titleFormat: { 
+        titleFormat: {
             month: 'long',
             year: 'numeric',
             day: 'numeric',
@@ -43,6 +44,7 @@ $(function() {
         themeSystem: 'bootstrap',
         events: events,
         eventClick: function(info) {
+            // Callback lorsqu'un événement est cliqué
             var details = $('#event-details-modal');
             var id = info.event.id;
 
@@ -58,21 +60,23 @@ $(function() {
             }
         },
         eventDidMount: function(info) {
-            // Do Something after events mounted
+            // Action à effectuer après l'affichage des événements
         },
         editable: true
     });
 
+    // Affichage du calendrier
     calendar.render();
 
-    // Form reset listener
+    // Écouteur de réinitialisation du formulaire
     $('#schedule-form').on('reset', function() {
         $(this).find('input:hidden').val('');
         $(this).find('input:visible').first().focus();
     });
 
-    // Edit Button
+    // Bouton Éditer
     $('#edit').click(function() {
+        // Action lors du clic sur le bouton Éditer
         var id = $(this).attr('data-id');
 
         if (!!scheds[id]) {
@@ -92,8 +96,9 @@ $(function() {
         }
     });
 
-    // Delete Button / Deleting an Event
+    // Bouton Supprimer / Suppression d'un événement
     $('#delete').click(function() {
+        // Action lors du clic sur le bouton Supprimer
         var id = $(this).attr('data-id');
 
         if (!!scheds[id]) {
