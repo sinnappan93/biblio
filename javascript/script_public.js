@@ -29,9 +29,8 @@ $(function() {
             var start = info.start; // Récupère la date de début sélectionnée
             var end = info.end;
 
-            $('#start_datetime').val(moment(start).format('YYYY-MM-DDTHH:mm'));//erreur de recuperation
-            $('#end_datetime').val(moment(end).format('YYYY-MM-DDTHH:mm'));//erreur de recuperation 
-            //$('#end_datetimer').val(moment(end_r).format('YYYY-MM-DDTHH:mm'));//erreur de recuperation 
+            $('#start_datetime').val(moment(start).format('YYYY-MM-DDTHH:mm'));
+            $('#end_datetime').val(moment(end).format('YYYY-MM-DDTHH:mm')); 
 
         },
         slotMinTime: "08:00",

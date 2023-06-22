@@ -48,8 +48,7 @@
             $sched_res[$row['id']] = $row;
         }
 
-       // $get_color = $conn->query("SELECT color FROM `schedule_list` WHERE id = $row['id']
-    // Fermeture de la connexion à la base de données
+        
 
         if(isset($conn)) $conn->close();
     ?>
