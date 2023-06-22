@@ -1,5 +1,5 @@
 <?php 
-<<<<<<< HEAD
+
     require_once('database/bd.php'); // Inclusion du fichier de connexion à la base de données
 
     if($_SERVER['REQUEST_METHOD'] != 'POST'){ // Vérification de la méthode de requête HTTP utilisée
@@ -31,8 +31,8 @@
     }
     
     $conn->close(); // Fermeture de la connexion à la base de données
-?>
-=======
+
+
 
 require_once('database/bd.php');
 
@@ -128,4 +128,4 @@ if($_SERVER['REQUEST_METHOD'] !='POST'){
       }
 
 ?>
->>>>>>> 437bce66c2cb9fa0de9afd726fe8c71e602228c4
+
