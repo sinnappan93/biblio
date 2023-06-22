@@ -1,5 +1,5 @@
 
-    <style>
+<style>
         .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
             background-color: yellow;
         }
@@ -48,8 +48,7 @@
             $sched_res[$row['id']] = $row;
         }
 
-       // $get_color = $conn->query("SELECT color FROM `schedule_list` WHERE id = $row['id']
-    // Fermeture de la connexion à la base de données
+        
 
         if(isset($conn)) $conn->close();
     ?>

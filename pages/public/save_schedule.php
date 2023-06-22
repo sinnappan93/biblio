@@ -1,5 +1,4 @@
 <?php 
-
     require_once('database/bd.php'); // Inclusion du fichier de connexion à la base de données
 
     if($_SERVER['REQUEST_METHOD'] != 'POST'){ // Vérification de la méthode de requête HTTP utilisée
