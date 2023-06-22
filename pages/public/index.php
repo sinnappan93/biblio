@@ -1,5 +1,5 @@
 
-    <style>
+<style>
         .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
             background-color: yellow;
         }
